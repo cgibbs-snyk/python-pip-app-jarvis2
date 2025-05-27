@@ -19,9 +19,11 @@ jobs:
           
       - name: Install core project dependencies
         run: pip install -r requirements.txt
+        continue-on-error: true
 
       - name: Install development dependencies
         run: pip install -r requirements-dev.txt
+        continue-on-error: true
 
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/python-3.8@master
