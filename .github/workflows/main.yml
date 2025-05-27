@@ -10,7 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
+      - name: Set up Python 3.8 and cache dependencies
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8' # Or your specific version
+          cache: 'pip' # Enable pip caching
+          
       - name: Install core project dependencies
         run: pip install -r requirements.txt
 
