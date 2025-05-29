@@ -15,10 +15,11 @@ jobs:
         uses: snyk/actions/python-3.8@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-          SNYK_API: https://api.eu.snyk.io # Keep your specific API endpoint
+          SNYK_API: https://api.eu.snyk.io
         with:
           args: --org=pipeline-examples --all-projects --severity-threshold=high
         continue-on-error: true
+
 
   security-monitor:
     runs-on: ubuntu-latest
